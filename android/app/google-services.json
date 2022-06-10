@@ -1,0 +1,97 @@
+{
+  "project_info": {
+    "project_number": "519804564599",
+    "project_id": "zavalabs-mobile",
+    "storage_bucket": "zavalabs-mobile.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519804564599:android:5b13fdeb5fc90697d28272",
+        "android_client_info": {
+          "package_name": "com.dfmotorapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519804564599-4vmve11uvrr7dc8mt5l5vvqr1a0us6mc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0E9YxwcU1kdsXV2qhvzrumzsb4VldS8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519804564599-4vmve11uvrr7dc8mt5l5vvqr1a0us6mc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519804564599:android:302a85afaa80777cd28272",
+        "android_client_info": {
+          "package_name": "com.esignapps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519804564599-4vmve11uvrr7dc8mt5l5vvqr1a0us6mc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0E9YxwcU1kdsXV2qhvzrumzsb4VldS8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519804564599-4vmve11uvrr7dc8mt5l5vvqr1a0us6mc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:519804564599:android:a58114e425de0d40d28272",
+        "android_client_info": {
+          "package_name": "com.sijasberdasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "519804564599-4vmve11uvrr7dc8mt5l5vvqr1a0us6mc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0E9YxwcU1kdsXV2qhvzrumzsb4VldS8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "519804564599-4vmve11uvrr7dc8mt5l5vvqr1a0us6mc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
