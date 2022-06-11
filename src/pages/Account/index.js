@@ -57,7 +57,7 @@ export default function Account({ navigation, route }) {
         }}>
           <Image source={{
             uri: user.foto_user,
-          }} style={{ width: 120, height: 120, borderRadius: 10, }} />
+          }} style={{ width: 80, height: 80, borderRadius: 10, }} />
         </View>
 
         {/* data detail */}
@@ -75,7 +75,7 @@ export default function Account({ navigation, route }) {
           <View>
             <View
               style={{
-                marginVertical: 5,
+                marginVertical: 3,
                 padding: 10,
                 backgroundColor: colors.white,
                 borderRadius: 10,
@@ -85,7 +85,7 @@ export default function Account({ navigation, route }) {
                   fontFamily: fonts.secondary[600],
                   color: colors.black,
                 }}>
-                Nama Lengkap
+                Nama Pribadi
               </Text>
               <Text
                 style={{
@@ -99,7 +99,7 @@ export default function Account({ navigation, route }) {
 
             <View
               style={{
-                marginVertical: 5,
+                marginVertical: 3,
                 padding: 10,
                 backgroundColor: colors.white,
                 borderRadius: 10,
@@ -109,7 +109,7 @@ export default function Account({ navigation, route }) {
                   fontFamily: fonts.secondary[600],
                   color: colors.black,
                 }}>
-                E-mail
+                E-mail / Username
               </Text>
               <Text
                 style={{
@@ -121,7 +121,7 @@ export default function Account({ navigation, route }) {
             </View>
             <View
               style={{
-                marginVertical: 5,
+                marginVertical: 3,
                 padding: 10,
                 backgroundColor: colors.white,
                 borderRadius: 10,
@@ -143,7 +143,7 @@ export default function Account({ navigation, route }) {
             </View>
             <View
               style={{
-                marginVertical: 5,
+                marginVertical: 3,
                 padding: 10,
                 backgroundColor: colors.white,
                 borderRadius: 10,
@@ -161,6 +161,54 @@ export default function Account({ navigation, route }) {
                   color: colors.primary,
                 }}>
                 {user.alamat}
+              </Text>
+            </View>
+
+
+
+            <View
+              style={{
+                marginVertical: 3,
+                padding: 10,
+                backgroundColor: colors.white,
+                borderRadius: 10,
+              }}>
+              <Text
+                style={{
+                  fontFamily: fonts.secondary[600],
+                  color: colors.black,
+                }}>
+                Nama Toko
+              </Text>
+              <Text
+                style={{
+                  fontFamily: fonts.secondary[400],
+                  color: colors.primary,
+                }}>
+                {user.nama_toko}
+              </Text>
+            </View>
+
+            <View
+              style={{
+                marginVertical: 3,
+                padding: 10,
+                backgroundColor: colors.white,
+                borderRadius: 10,
+              }}>
+              <Text
+                style={{
+                  fontFamily: fonts.secondary[600],
+                  color: colors.black,
+                }}>
+                Alamat Toko
+              </Text>
+              <Text
+                style={{
+                  fontFamily: fonts.secondary[400],
+                  color: colors.primary,
+                }}>
+                {user.alamat_toko}
               </Text>
             </View>
 

@@ -122,8 +122,8 @@ export default function Login({ navigation }) {
 
           <MyGap jarak={20} />
           <MyInput
-            label="Email"
-            iconname="mail"
+            label="Email / Username"
+            iconname="person"
             keyboardType="email-address"
             value={data.email}
             onChangeText={value =>

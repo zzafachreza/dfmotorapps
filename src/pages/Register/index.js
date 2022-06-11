@@ -48,6 +48,8 @@ export default function Register({ navigation }) {
     email: '',
     password: '',
     telepon: '',
+    nama_toko: '',
+    alamat_toko: ''
   });
 
   const simpan = () => {
@@ -122,7 +124,7 @@ export default function Register({ navigation }) {
 
         <MyGap jarak={10} />
         <MyInput
-          label="Nama Lengkap"
+          label="Nama Pribadi"
           iconname="person"
           value={data.nama_lengkap}
           onChangeText={value =>
@@ -134,9 +136,12 @@ export default function Register({ navigation }) {
         />
 
 
+
+
+
         <MyGap jarak={10} />
         <MyInput
-          label="E - mail"
+          label="E - mail / Username"
           iconname="mail"
           keyboardType="email-address"
           value={data.email}
@@ -176,10 +181,32 @@ export default function Register({ navigation }) {
 
         <MyGap jarak={10} />
         <MyInput
-          fontColor={isEnabled ? colors.white : colors.black}
-          labelColor={isEnabled ? colors.white : colors.primary}
-          colorIcon={isEnabled ? colors.white : colors.primary}
-          borderColor={isEnabled ? colors.white : colors.primary}
+          label="Nama Toko ( jika ada mohon diisi )"
+          iconname="home"
+          value={data.nama_toko}
+          onChangeText={value =>
+            setData({
+              ...data,
+              nama_toko: value,
+            })
+          }
+        />
+
+        <MyGap jarak={10} />
+        <MyInput
+          label="Alamat Toko ( jika ada mohon diisi )"
+          iconname="map"
+          value={data.alamat_toko}
+          onChangeText={value =>
+            setData({
+              ...data,
+              alamat_toko: value,
+            })
+          }
+        />
+
+        <MyGap jarak={10} />
+        <MyInput
           label="Password"
           iconname="key"
           secureTextEntry

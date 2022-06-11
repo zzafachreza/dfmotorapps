@@ -38,6 +38,10 @@ export default function Home({ navigation }) {
       const json = JSON.stringify(remoteMessage);
       const obj = JSON.parse(json);
 
+      // console.log(obj);
+
+      // alert(obj.notification.title)
+
 
 
       PushNotification.localNotification({
@@ -49,12 +53,12 @@ export default function Home({ navigation }) {
     });
 
     getDataKategori();
+    __getDataUserInfo();
+    // if (isFocused) {
 
-    if (isFocused) {
-      __getDataUserInfo();
-    }
+    // }
     return unsubscribe;
-  }, [isFocused]);
+  }, []);
 
 
   const getDataKategori = () => {

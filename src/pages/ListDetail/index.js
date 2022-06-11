@@ -222,40 +222,7 @@ export default function ListDetail({ navigation, route }) {
         {/* ---- */}
 
         {/* --- */}
-        <View
-          style={{
-            flexDirection: 'row',
-            borderTopWidth: 1,
-            borderTopColor: '#EEEEEE',
-          }}>
-          <View style={{ flex: 1, padding: 10 }}>
-            <Text
-              style={{
-                fontFamily: fonts.secondary[400],
-                backgroundColor: colors.white,
 
-                color: colors.black,
-              }}>
-              Alamat (Jika COD)
-            </Text>
-          </View>
-          <View
-            style={{
-              justifyContent: 'center',
-              flex: 2,
-            }}>
-            <Text
-              style={{
-                fontFamily: fonts.secondary[600],
-                backgroundColor: colors.white,
-                fontSize: 14,
-                padding: 10,
-                color: colors.black,
-              }}>
-              {data.alamat_kirim}
-            </Text>
-          </View>
-        </View>
         {/* ---- */}
 
         {/* --- */}
@@ -292,15 +259,7 @@ export default function ListDetail({ navigation, route }) {
       {buka &&
         <ScrollView style={{ padding: 10, flex: 1 }}>
           <DataPesanan />
-          <Text
-            style={{
-              fontFamily: fonts.secondary[600],
-              backgroundColor: '#DEDEDE',
-              padding: 10,
-              color: colors.black,
-            }}>
-            TRANSAKSI
-          </Text>
+
           <DataTransaksi />
 
           <Text
@@ -310,7 +269,7 @@ export default function ListDetail({ navigation, route }) {
               padding: 10,
               color: colors.white,
             }}>
-            Detail sampah
+            Detail Spare Part
           </Text>
 
           {dataDetail.map(i => {
@@ -390,20 +349,7 @@ export default function ListDetail({ navigation, route }) {
               }}>    {new Intl.NumberFormat().format(item.total_harga)}</Text>
             </View>
           </View>
-          <Text
-            style={{
-              fontFamily: fonts.secondary[600],
-              backgroundColor: colors.secondary,
-              padding: 10,
-              color: colors.white,
-            }}>
-            Bukti Transfer
-          </Text>
-          <Image source={{
-            uri: item.image
-          }} style={{
-            width: windowWidth, height: windowHeight / 2
-          }} />
+
 
         </ScrollView>
       }

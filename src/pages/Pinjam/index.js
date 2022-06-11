@@ -56,6 +56,8 @@ export default function Pinjam({ navigation, route }) {
     const kirim = {
       fid_user: user.id,
       fid_barang: item.id,
+      harga_dasar: item.harga_dasar,
+      diskon: item.diskon,
       harga: item.harga_barang,
       qty: jumlah,
       total: item.harga_barang * jumlah
@@ -198,7 +200,7 @@ export default function Pinjam({ navigation, route }) {
             </View>
           </View>
         }
-        withHandle={false}
+
         ref={modalizeRef}>
         <View style={{ flex: 1, height: windowWidth / 2 }}>
           <View style={{ padding: 10, flex: 1 }}>

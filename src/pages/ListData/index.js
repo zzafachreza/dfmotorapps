@@ -64,30 +64,33 @@ export default function ({ navigation, route }) {
         elevation: 1,
       }}>
       <View style={{ flexDirection: 'row', padding: 10 }}>
+        <View style={{
+          flex: 1,
+        }}>
+          <Text
+            style={{
+              flex: 1,
+              fontSize: windowWidth / 30,
+              color: colors.primary,
+              fontFamily: fonts.secondary[600],
+            }}>
+            {item.kode}
+          </Text>
+          <Text
+            style={{
+              flex: 1,
+              fontSize: windowWidth / 30,
+              color: colors.black,
+              fontFamily: fonts.secondary[600],
+            }}>
+            {item.tanggal}
+          </Text>
+        </View>
         <Text
           style={{
-            flex: 1,
-            fontSize: windowWidth / 30,
-            color: colors.primary,
-            fontFamily: fonts.secondary[600],
-          }}>
-          {item.kode}
-        </Text>
-        <Text
-          style={{
-            flex: 1,
-            fontSize: windowWidth / 30,
-            color: colors.black,
-            fontFamily: fonts.secondary[600],
-          }}>
-          {item.tanggal}
-        </Text>
-        <Text
-          style={{
-            fontSize: windowWidth / 30,
-            color: colors.white,
-            paddingHorizontal: 10,
-            backgroundColor: item.status == "OPEN" ? colors.danger : item.status == "EXPIRED" ? colors.border : colors.success,
+            fontSize: windowWidth / 35,
+            // color: colors.white,
+            color: item.status == "MENUNGGU KONFIRMASI" ? colors.danger : item.status == "EXPIRED" ? colors.border : colors.success,
             fontFamily: fonts.secondary[600],
           }}>
           {item.status}
@@ -101,29 +104,6 @@ export default function ({ navigation, route }) {
           borderTopWidth: 1,
           borderTopColor: colors.tertiary,
         }}>
-        <View
-          style={{
-            alignItems: 'center',
-            justifyContent: 'center',
-            // flex: 1,
-          }}>
-          <Text
-            style={{
-              fontSize: windowWidth / 30,
-              fontFamily: fonts.secondary[600],
-              color: colors.black,
-            }}>
-            {item.nama_lengkap}
-          </Text>
-          <Text
-            style={{
-              fontSize: windowWidth / 30,
-              textAlign: 'center',
-              color: colors.black,
-            }}>
-            {item.telepon}
-          </Text>
-        </View>
 
         <View
           style={{
@@ -152,9 +132,9 @@ export default function ({ navigation, route }) {
           }}>
           <Text
             style={{
-              fontSize: windowWidth / 25,
+              fontSize: windowWidth / 20,
               fontFamily: fonts.secondary[600],
-              color: colors.secondary,
+              color: colors.black,
             }}>
             {new Intl.NumberFormat().format(item.total_harga)}
           </Text>

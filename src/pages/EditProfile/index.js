@@ -28,7 +28,9 @@ export default function EditProfile({ navigation, route }) {
   const windowWidth = Dimensions.get('window').width;
   const windowHeight = Dimensions.get('window').height;
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState({});
+  const [data, setData] = useState({
+
+  });
   const [foto, setfoto] = useState('https://zavalabs.com/nogambar.jpg');
 
   const options = {
@@ -213,7 +215,7 @@ export default function EditProfile({ navigation, route }) {
 
         <MyGap jarak={10} />
         <MyInput
-          label="Nama Lengkap"
+          label="Nama Pribadi"
           iconname="person-outline"
           value={data.nama_lengkap}
           onChangeText={value =>
@@ -228,7 +230,7 @@ export default function EditProfile({ navigation, route }) {
 
         <MyGap jarak={10} />
         <MyInput
-          label="E - mail"
+          label="E - mail / username"
           iconname="mail-outline"
           value={data.email}
           onChangeText={value =>
@@ -264,6 +266,36 @@ export default function EditProfile({ navigation, route }) {
             setData({
               ...data,
               alamat: value,
+            })
+          }
+        />
+
+
+        <MyGap jarak={10} />
+        <MyInput
+          label="Nama Toko"
+          iconname="home-outline"
+          multiline={true}
+          value={data.nama_toko}
+          onChangeText={value =>
+            setData({
+              ...data,
+              nama_toko: value,
+            })
+          }
+        />
+
+
+        <MyGap jarak={10} />
+        <MyInput
+          label="Alamat Toko"
+          iconname="map-outline"
+          multiline={true}
+          value={data.alamat_toko}
+          onChangeText={value =>
+            setData({
+              ...data,
+              alamat_toko: value,
             })
           }
         />

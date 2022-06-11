@@ -10,6 +10,6 @@ export const colors = {
   white: 'white',
   border: '#CECECE',
   zavalabs: '#CECECE',
-  zavalabs2: '#F5F5F5',
+  zavalabs2: '#FFA00A',
   zavalabs2: '#E8E8E8'
 };

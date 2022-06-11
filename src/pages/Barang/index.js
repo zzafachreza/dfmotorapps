@@ -26,6 +26,7 @@ export default function ({ navigation, route }) {
   const [refreshing, setRefreshing] = React.useState(false);
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [myKey, setMykey] = useState('');
 
   const key = route.params.key;
 
@@ -46,6 +47,7 @@ export default function ({ navigation, route }) {
       key2: y,
       id_user: route.params.id_user
     }).then(res => {
+      setMykey('');
       console.warn(res.data);
       setLoading(false);
       setData(res.data);
@@ -97,15 +99,38 @@ export default function ({ navigation, route }) {
             }}>
             {item.nama_kategori}
           </Text>
+          {item.diskon > 0 && <Text
+            style={{
+              fontSize: windowWidth / 35,
+              color: '#FF3D00',
+              fontFamily: fonts.secondary[600],
+            }}>
+            Disc {new Intl.NumberFormat().format(item.diskon)}%
+          </Text>}
         </View>
-        <Text
-          style={{
-            fontSize: windowWidth / 30,
-            color: colors.primary,
-            fontFamily: fonts.secondary[600],
-          }}>
-          Rp. {new Intl.NumberFormat().format(item.harga_barang)}
-        </Text>
+        <View>
+          {item.diskon > 0 &&
+            <Text
+              style={{
+                fontSize: windowWidth / 30,
+                color: colors.zavalabs,
+                textAlign: 'right',
+                textDecorationLine: 'line-through',
+                textDecorationStyle: 'solid',
+                fontFamily: fonts.secondary[600],
+              }}>
+              Rp. {new Intl.NumberFormat().format(item.harga_dasar)}
+            </Text>
+          }
+          <Text
+            style={{
+              fontSize: windowWidth / 25,
+              color: colors.primary,
+              fontFamily: fonts.secondary[600],
+            }}>
+            Rp. {new Intl.NumberFormat().format(item.harga_barang)}
+          </Text>
+        </View>
 
       </View>
 
@@ -122,17 +147,20 @@ export default function ({ navigation, route }) {
         backgroundColor: colors.white,
       }}>
       <View>
-        <TextInput autoCapitalize='none' onSubmitEditing={(x) => {
+        <TextInput value={myKey} autoCapitalize='none' onSubmitEditing={(x) => {
           console.warn(x.nativeEvent.text);
-          getDataBarang(x.nativeEvent.text)
-        }} placeholder='Masukan kata kunci' style={{
-          fontFamily: fonts.secondary[400],
-          paddingLeft: 10,
-          fontSize: windowWidth / 25,
-          borderWidth: 1,
-          borderColor: colors.primary,
-          borderRadius: 10,
-        }} />
+          setMykey(x.nativeEvent.text);
+          getDataBarang(x.nativeEvent.text);
+        }}
+          onChangeText={x => setMykey(x)}
+          placeholder='Masukan kata kunci' style={{
+            fontFamily: fonts.secondary[400],
+            paddingLeft: 10,
+            fontSize: windowWidth / 25,
+            borderWidth: 1,
+            borderColor: colors.primary,
+            borderRadius: 10,
+          }} />
 
       </View>
       {loading && <View style={{

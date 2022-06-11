@@ -146,8 +146,9 @@ export default function Cart({ navigation, route }) {
                   flex: 1,
                   fontSize: windowWidth / 30,
                 }}>
-                {new Intl.NumberFormat().format(item.harga)} x {item.qty} Kg
+                {new Intl.NumberFormat().format(item.harga)} x {item.qty}
               </Text>
+
               <View
                 style={{
                   justifyContent: 'flex-end',
@@ -338,19 +339,10 @@ export default function Cart({ navigation, route }) {
 
           ]}
         />
-        {buka &&
 
-          <MyInput label="Alamat Pengiriman" multiline onChangeText={val => setAlamat(val)} value={alamat} />
-        }
 
       </View>
 
-      {!buka && <UploadFoto
-        onPress1={() => getCamera(1)}
-        onPress2={() => getGallery(1)}
-        label="Upload Bukti Foto"
-        foto={foto}
-      />}
 
       {!loading &&
         <View
