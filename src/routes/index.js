@@ -68,8 +68,9 @@ const MainApp = () => {
   return (
     <Tab.Navigator tabBar={props => <BottomNavigator {...props} />}>
       <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Whatsapp" component={Wa} />
       <Tab.Screen name="History" component={ListData} />
-      {/*<Tab.Screen name="Cart" component={Cart} />  */}
+
       {/* <Tab.Screen name="Notifikasi" component={Notifikasi} /> */}
       <Tab.Screen name="Account" component={Account} />
     </Tab.Navigator>
@@ -819,7 +820,7 @@ export default function Router() {
         name="ListData"
         component={ListData}
         options={({ route, navigation }) => ({
-          title: 'HISTORY ABSENSI',
+          title: 'HISTORY TRANSAKSI',
           headerTintColor: colors.white,
           headerStyle: {
             backgroundColor: colors.primary,

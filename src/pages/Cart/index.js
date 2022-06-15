@@ -9,6 +9,7 @@ import {
   Image,
   Linking,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 
 import { getData, storeData, urlAPI } from '../../utils/localStorage';
@@ -66,14 +67,7 @@ export default function Cart({ navigation, route }) {
     }).then(x => {
       getData('user').then(tkn => {
         __getDataBarang(tkn.id);
-        axios
-          .post('https://sampah.zavalabs.com/api/1_cart.php', {
-            fid_user: tkn.id
-          })
-          .then(res => {
-            console.log('cart', res.data);
-            setCart(res.data);
-          });
+
       });
 
       getData('cart').then(xx => {
@@ -94,79 +88,79 @@ export default function Cart({ navigation, route }) {
 
   const __renderItem = ({ item, index }) => {
     return (
-      <Swipeable
-        renderRightActions={() => {
-          return (
-            <TouchableWithoutFeedback
-              onPress={() => {
-                hanldeHapus(item.id)
 
-              }}>
-              <View
-                style={{
-                  // flex: 1,
-                  width: 100,
-                  //   backgroundColor: 'blue',
-                  // padding: 20,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <Icon
-                  type="ionicon"
-                  name="trash"
-                  size={40}
-                  color={colors.danger}
-                />
-              </View>
-            </TouchableWithoutFeedback>
-          );
+      <View
+        style={{
+          marginVertical: 5,
+          borderRadius: 10,
+          padding: 10,
+          elevation: 2,
+          backgroundColor: colors.white,
         }}>
-        <View
-          style={{
-            marginVertical: 10,
-            borderRadius: 10,
-            padding: 10,
-            elevation: 2,
-            backgroundColor: colors.white,
-          }}>
-          <View style={{ flexDirection: 'row' }}>
+        <View style={{ flexDirection: 'row' }}>
 
-            <View style={{ marginLeft: 10, flex: 1, justifyContent: 'center' }}>
+          <View style={{ marginLeft: 10, flex: 1, justifyContent: 'center' }}>
+            <Text
+              style={{
+                fontFamily: fonts.secondary[600],
+                fontSize: windowWidth / 30,
+              }}>
+              {item.nama_barang}
+            </Text>
+
+            <Text
+              style={{
+                fontFamily: fonts.secondary[400],
+                flex: 1,
+                fontSize: windowWidth / 30,
+              }}>
+              {new Intl.NumberFormat().format(item.harga)} x {item.qty}
+            </Text>
+
+
+            <View
+              style={{
+                justifyContent: 'flex-end',
+                alignItems: 'flex-end',
+              }}>
               <Text
                 style={{
                   fontFamily: fonts.secondary[600],
-                  fontSize: windowWidth / 30,
+                  color: colors.warning,
+                  fontSize: windowWidth / 25,
                 }}>
-                {item.nama_barang}
+                {new Intl.NumberFormat().format(item.total)}
               </Text>
-
-              <Text
-                style={{
-                  fontFamily: fonts.secondary[400],
-                  flex: 1,
-                  fontSize: windowWidth / 30,
-                }}>
-                {new Intl.NumberFormat().format(item.harga)} x {item.qty}
-              </Text>
-
-              <View
-                style={{
-                  justifyContent: 'flex-end',
-                  alignItems: 'flex-end',
-                }}>
-                <Text
-                  style={{
-                    fontFamily: fonts.secondary[600],
-                    color: colors.warning,
-                    fontSize: windowWidth / 25,
-                  }}>
-                  {new Intl.NumberFormat().format(item.total)}
-                </Text>
-              </View>
             </View>
+            <TouchableOpacity onPress={() => {
+
+
+              Alert.alert(
+                "Apakah kamu yakin akan menghapus ini ?",
+                item.nama_barang,
+                [
+                  {
+                    text: "Cancel",
+                    onPress: () => console.log("Cancel Pressed"),
+                    style: "cancel"
+                  },
+                  { text: "OK", onPress: () => hanldeHapus(item.id) }
+                ]
+              );
+
+            }} style={{
+              width: 30,
+              padding: 3,
+              justifyContent: 'center',
+              alignItems: 'center'
+              // padding: 10,
+            }}>
+              <Icon type='ionicon' name='trash' color={colors.danger} />
+            </TouchableOpacity>
           </View>
         </View>
-      </Swipeable>
+      </View>
+
     );
   };
 
@@ -393,9 +387,9 @@ export default function Cart({ navigation, route }) {
                     setLoading(false);
                     showMessage({
                       type: 'success',
-                      message: 'Penjualan sampah Anda bserhasil dikirim'
+                      message: 'Transaksi kamu berhasil dikirim'
                     })
-                    navigation.replace('MainApp')
+                    navigation.replace('ListData')
                   }, 1500)
 
 

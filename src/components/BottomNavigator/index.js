@@ -66,9 +66,9 @@ export default function BottomNavigator({ state, descriptors, navigation }) {
         } else if (label === 'History') {
           iconName = 'file-tray-stacked-outline';
           Newlabel = 'History';
-        } else if (label === 'History2') {
-          iconName = 'file-tray-stacked-outline';
-          Newlabel = 'History Component';
+        } else if (label === 'Whatsapp') {
+          iconName = 'logo-whatsapp';
+          Newlabel = 'Whatsapp';
         }
 
         return (

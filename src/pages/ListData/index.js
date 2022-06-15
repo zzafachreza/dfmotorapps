@@ -86,15 +86,20 @@ export default function ({ navigation, route }) {
             {item.tanggal}
           </Text>
         </View>
-        <Text
-          style={{
-            fontSize: windowWidth / 35,
-            // color: colors.white,
-            color: item.status == "MENUNGGU KONFIRMASI" ? colors.danger : item.status == "EXPIRED" ? colors.border : colors.success,
-            fontFamily: fonts.secondary[600],
-          }}>
-          {item.status}
-        </Text>
+        <View style={{
+          flex: 1,
+        }}>
+          <Text
+            style={{
+              fontSize: windowWidth / 35,
+              // color: colors.white,
+              textAlign: 'center',
+              color: item.status == "STOK TIDAK TERSEDIA" ? colors.danger : item.status == "PESANAN SEDANG DIPERIKSA" ? colors.border : colors.success,
+              fontFamily: fonts.secondary[600],
+            }}>
+            {item.status}
+          </Text>
+        </View>
       </View>
 
       <View

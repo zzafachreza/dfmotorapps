@@ -53,12 +53,12 @@ export default function Home({ navigation }) {
     });
 
     getDataKategori();
-    __getDataUserInfo();
-    // if (isFocused) {
 
-    // }
+    if (isFocused) {
+      __getDataUserInfo();
+    }
     return unsubscribe;
-  }, []);
+  }, [isFocused]);
 
 
   const getDataKategori = () => {
